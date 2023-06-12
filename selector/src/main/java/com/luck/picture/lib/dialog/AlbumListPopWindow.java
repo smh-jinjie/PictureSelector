@@ -1,12 +1,14 @@
 package com.luck.picture.lib.dialog;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 
@@ -130,8 +132,18 @@ public class AlbumListPopWindow extends PopupWindow {
         if (windowStatusListener != null) {
             windowStatusListener.onShowPopupWindow();
         }
-        windMask.animate().alpha(1).setDuration(250).setStartDelay(250).start();
+        //windMask.animate().alpha(1).setDuration(250).setStartDelay(250).start();
         changeSelectedAlbumStyle();
+    }
+
+    private final void darkenBackground(float alpha) {
+        if (mContext instanceof Activity) {
+            Activity activity = (Activity) mContext;
+            WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+            lp.alpha = alpha;
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            activity.getWindow().setAttributes(lp);
+        }
     }
 
     /**
