@@ -510,7 +510,7 @@ public class PictureSelectorPreviewFragment extends PictureCommonFragment {
             } else {
                 onExitFragment();
             }
-            return loadAnimation;
+            return null;
         } else {
             return super.onCreateAnimation(transit, enter, nextAnim);
         }

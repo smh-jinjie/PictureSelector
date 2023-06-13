@@ -364,7 +364,7 @@ public abstract class PictureCommonFragment extends Fragment implements IPicture
             } else {
                 loadAnimation = AnimationUtils.loadAnimation(getAppContext(), R.anim.ps_anim_alpha_enter);
             }
-            setEnterAnimationDuration(loadAnimation.getDuration());
+            //setEnterAnimationDuration(loadAnimation.getDuration());
             onEnterFragment();
         } else {
             if (windowAnimationStyle.activityExitAnimation != 0) {
@@ -374,7 +374,7 @@ public abstract class PictureCommonFragment extends Fragment implements IPicture
             }
             onExitFragment();
         }
-        return loadAnimation;
+        return null;
     }
 
     public void setEnterAnimationDuration(long duration) {
