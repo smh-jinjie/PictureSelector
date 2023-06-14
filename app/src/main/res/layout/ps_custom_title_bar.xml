@@ -15,14 +15,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/top_status_bar">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ps_iv_left_back"
+            style="@android:style/Widget.Material.Toolbar.Button.Navigation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="7dp"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            android:scaleType="centerInside"
             android:src="@drawable/ps_ic_back" />
 
         <RelativeLayout
